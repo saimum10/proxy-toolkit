@@ -16,24 +16,8 @@
 ## Features
 
 **1 · Proxy Checker**
-- Load proxies by **drag & drop**, **Browse**, or **paste** (all three are merged, duplicates removed)
-- Checks HTTP / HTTPS / SOCKS4 / SOCKS5 — protocol is auto-detected when no scheme is given
-- Real HTTPS request through each proxy; the exit IP must differ from yours
-- Anonymity level (transparent / anonymous / elite), multi-target test (ipify, Cloudflare, Google, custom URL)
-- Remote-DNS support check, stability rounds, speed score
-- Country / city / ISP / datacenter lookup
-- Sort, filter, favourites, blacklist, export to JSON / CSV / TXT / per-country lists
 
 **2 · Proxy Rotation / Chain**
-- One local port (default `127.0.0.1:1080`) that speaks **SOCKS5, SOCKS4/4a and HTTP(S)**
-- Rotation modes: round-robin, random, fastest first, sticky per domain, **manual (hold one IP)**
-- Chain modes: strict, dynamic, random — like `proxychains`, but built in, with a drag & drop chain builder
-- **🔄 Change IP** button: tests the next live proxy, switches to it and (optionally) closes open connections
-- **🛡 Safe browser**: opens a separate Firefox / Chromium / Chrome / Brave window (Edge too on Windows) that
-  can only use the proxy — WebRTC, local DNS, QUIC (HTTP/3), IPv6 DNS and direct fallback are switched off
-- **Kill-switch**: the server never connects directly — no live proxy means the connection is refused
-- Background health monitor: dead proxies leave the pool, recovered ones return
-- Filters by country / minimum score, "require remote DNS" to avoid DNS leaks
 
 **3 · Two ways to get it**
 - **Standalone app** — build a single binary (`.deb` on Linux, `.exe` on Windows); no Python needed to run it
@@ -47,13 +31,9 @@
 | To build | Python 3 (3.12 recommended), internet access for the build | — |
 | To run | nothing extra (the `.deb` pulls in the Qt system libraries) | Python 3, `git`, the packages listed below |
 
-> The Windows build is new and has been tested less than the Linux one. Please report problems.
-
 ---
 
 # Standalone app (build, install, uninstall)
-
-Each OS must be built **on that OS** — PyInstaller cannot cross-compile.
 
 ## Build
 
@@ -296,6 +276,7 @@ Limits — read this:
 - Country / city / ISP data comes from [ip-api.com](https://ip-api.com) (free tier: 15 batch
   requests per minute, non-commercial use).
 - Use this tool only with proxies you are allowed to use and on systems you are authorised to test.
+- **It's not verified that it's leak-protected**
 
 # Troubleshooting
 
