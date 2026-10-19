@@ -1,0 +1,5 @@
+PyQt6>=6.5
+aiohttp>=3.9
+aiohttp-socks>=0.10
+python-socks[asyncio]>=3.0
+qasync>=0.27
